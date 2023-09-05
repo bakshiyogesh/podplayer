@@ -4,7 +4,7 @@ const podData = [
     audioURL:
       "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
     title: "The AC Method",
-    imgSRC:'../../public/ac_method.jpeg',
+    imgSRC:'/ac_method.jpeg',
     description: "Custom Manufacturing Industry podcast is an entrepreneurship and motivational podcast on all platforms, hosted by Aaron Clippinger. Being CEO of multiple companies including the signage industry and the software industry, Aaron has over 20 years of consulting and business management. His software has grown internationally and with over a billion dollars annually going through the software. Using his Accounting degree, Aaron will be talking about his organizational ways to get things done. His podcast will give you shortcuts to handling situations without having to live it firsthand. With his comedic way of looking at things, you will be entertained by his stories while learning best practices.",
   },
   {

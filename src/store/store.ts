@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
+import PodcastReducer from '../podslice/slice'
 export const store = configureStore({
     reducer: {
+      podcast:PodcastReducer
     },
   })
   
