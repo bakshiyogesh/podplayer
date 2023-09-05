@@ -4,4 +4,5 @@ export interface podData{
     title:string,
     imgSRC:string,
     description:string,
+    audioLength:string,
 }

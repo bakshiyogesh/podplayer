@@ -8,6 +8,7 @@ import { addPodData } from '../../podslice/slice';
 import { FC } from 'react';
 import { Grid } from '@mui/material';
 import Podheader from '../podheader/podheader';
+import { Link } from 'react-router-dom';
 
  const PodCard:FC=()=>{
     const dispatch=useDispatch();
@@ -21,6 +22,7 @@ import Podheader from '../podheader/podheader';
         return(
             <>
                 <Card sx={{ Width:200,background:'#1F1E1E',m:3}} key={item.id}>
+                  <Link to={`/podcasts`}>
                 <CardMedia
         component="img"
         height="194"
@@ -31,6 +33,7 @@ import Podheader from '../podheader/podheader';
         }}}
         onClick={()=>dispatch(addPodData(item))}
       />
+      </Link>
       <CardContent>
         <Typography variant="body2" color="#F8F8F8">
           {item.title}

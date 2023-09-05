@@ -1,8 +1,7 @@
-import { Button, Grid } from '@mui/material';
-import React, { useState, useRef, FC } from 'react';
+import { Button, Grid, IconButton } from '@mui/material';
+import { useState, useRef, FC } from 'react';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
-type Props = {}
 interface AudioProps{
     selectData:any
 }
@@ -11,7 +10,7 @@ const AudioPlayer:FC<AudioProps> = ({selectData}) => {
     console.log("selectedData",selectData);
     
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef= useRef<HTMLAudioElement>(null);
+    const audioRef= useRef<HTMLAudioElement|null>(null);
     const togglePlay = () => {
         if (audioRef.current?.paused) {
           audioRef.current.play();
@@ -26,7 +25,7 @@ const AudioPlayer:FC<AudioProps> = ({selectData}) => {
         <audio  ref={audioRef}>
             <source src={selectData} type='audio/mpeg'/>
         </audio>
-        <Button onClick={()=>togglePlay}>{isPlaying?<PauseCircleFilledIcon/>:<PlayCircleFilledIcon/>}</Button>
+        <Button onClick={()=>togglePlay}><IconButton>{isPlaying?<PauseCircleFilledIcon/>:<PlayCircleFilledIcon/>}</IconButton>Name</Button>
     </Grid>
   )
 }

@@ -1,16 +1,10 @@
-import { Grid } from '@mui/material'
 import './App.css'
-import PodCard from './components/card/card'
-import PlayListplayer from './components/playlisplayer/playlistplayer'
-
+import Routing from './routing/routing'
 function App() {
 
   return (
     <>
-    <Grid sx={{display:'flex'}}>
-   <PodCard/>
-   <PlayListplayer/>
-   </Grid>
+    <Routing/>
       </>
   )
 }
