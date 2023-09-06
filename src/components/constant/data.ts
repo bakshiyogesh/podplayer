@@ -4,7 +4,7 @@ const podData :podData[]= [
   {
     id: 1,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://dcs.megaphone.fm/PITXL4157491655.mp3",
     title: "The AC Method",
     imgSRC:'/ac_method.jpeg',
     description: "Custom Manufacturing Industry podcast is an entrepreneurship and motivational podcast on all platforms, hosted by Aaron Clippinger. Being CEO of multiple companies including the signage industry and the software industry, Aaron has over 20 years of consulting and business management. His software has grown internationally and with over a billion dollars annually going through the software. Using his Accounting degree, Aaron will be talking about his organizational ways to get things done. His podcast will give you shortcuts to handling situations without having to live it firsthand. With his comedic way of looking at things, you will be entertained by his stories while learning best practices.",
@@ -13,7 +13,7 @@ const podData :podData[]= [
   {
     id: 2,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://dcs.megaphone.fm/MILAR8291884907.mp3",
     title: "Millionaire University",
     imgSRC:'/public/milionaire_university.jpeg',
     description: "It is our belief that ANYONE can start and grow a successful business and we've created Millionaire University to help you get there! At Millionaire University, we follow a proven process that has been used to create successful businesses time and time again. Do you want to start a business or currently have a business you want to grow? Do you have a skill you want to turn into a business? Do you want to learn from other successful business owners and connect to like-minded entrepreneurs? Do you believe there is a better way to learn and a better way to create wealth? Then welcome to Millionaire University. Your school for wealth creation. Graduate rich, not broke. To get your FREE Business Training, go to MillionaireUniversity.com/training.",
@@ -23,7 +23,7 @@ const podData :podData[]= [
   {
     id: 3,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://audio.transistor.fm/m/shows/41076/dai/ea8f1e29d199d9db3eb3fe518b982ea5.mp3",
     title:
       "Zero to Unicorn",
     imgSRC:'/public/zero_unicorn.jpeg',
@@ -33,7 +33,7 @@ const podData :podData[]= [
   {
     id: 4,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2023-7-28/344804762-44100-2-7023f5302d1ef.mp3",
     title: "The Influence Factor ",
     imgSRC:'/public/influence_factor.jpeg',
     description: "Alessandro Bogliari, CEO and Co-Founder of The Influencer Marketing Factory, a global influencer marketing agency, talks with great guests about influencer marketing, social media, the creator economy, social commerce and much more.",
@@ -42,7 +42,7 @@ const podData :podData[]= [
   {
     id: 5,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://dcs.megaphone.fm/HS2090760096.mp3",
     title: "My First Million",    
     imgSRC:'/public/my_first_million.jpeg',
     description:
@@ -52,7 +52,7 @@ const podData :podData[]= [
   {
     id: 6,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://s342.podbean.com/pb/1028c8e3cff27689605ea25bfeb15fb9/64f7990b/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
     title: "Jiu Jitsu Dummies",
     imgSRC:'/public/jiu_jitsu_dummies.jpeg',
     description:
@@ -62,7 +62,7 @@ const podData :podData[]= [
   {
     id: 7,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://dcs.megaphone.fm/TPG3415315545.mp3",
     title:
       "Gravy",
     imgSRC:"/public/gravy.jpeg",
@@ -72,7 +72,7 @@ const podData :podData[]= [
   {
     id: 8,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://dcs.megaphone.fm/MERE3258045955.mp3",
     title:
       "The Better Buy",
     imgSRC:'/public/the_better_buy.jpeg',
@@ -82,7 +82,7 @@ const podData :podData[]= [
   {
     id: 9,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://dcs.megaphone.fm/HS7044766323.mp3",
     title:
       "Marketing Against The Grain",
     imgSRC:"/public/marketing_against.jpeg",
@@ -92,7 +92,7 @@ const podData :podData[]= [
   {
     id: 10,
     audioURL:
-      "https://s343.podbean.com/pb/3dcc4e7f60281d54c697e9271c06050a/64f53d9a/data1/fs156/4944510/uploads/JJD-Ep125-Audio.mp3",
+      "https://s356.podbean.com/pb/0f20c75b418a33599f548874299ef708/64f7c078/data1/fs103/12984853/uploads/TCI_Ep84_Henry_Ford_s_Insightful_Quote69aoq.mp3",
     title: "The Clever Investor Podcast",
     imgSRC:'/public/clever_investor.jpeg',
     description:

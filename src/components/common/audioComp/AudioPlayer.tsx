@@ -47,7 +47,7 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
     setMuted(!muted);
   };
   return (
-    <Grid container sx={{ background: "#454545" }}>
+    <Grid container sx={{ background: "#454545",width:'100vw'}}>
       <audio
         ref={audioRef}
         src={selectData[0].audioURL}

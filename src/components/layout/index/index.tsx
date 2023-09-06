@@ -3,9 +3,8 @@ import React from 'react'
 import PodCard from '../../common/card/card';
 import PlayListplayer from '../../common/playlisplayer/playlistplayer';
 
-type Props = {}
 
-const LayoutHome = (props: Props) => {
+const LayoutHome = () => {
   return (
     <Grid sx={{display:'flex'}}>
     <PodCard/>
