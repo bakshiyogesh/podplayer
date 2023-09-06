@@ -1,4 +1,4 @@
-import React, { useState, useRef, FC } from "react";
+import { useState, useRef, FC } from "react";
 import Slider from "@mui/material/Slider";
 import IconButton from "@mui/material/IconButton";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -6,7 +6,8 @@ import PauseIcon from "@mui/icons-material/Pause";
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import Forward10Icon from "@mui/icons-material/Forward10";
-import { Grid } from "@mui/material";
+import Replay10Icon from '@mui/icons-material/Replay10';
+import { Button, Grid } from "@mui/material";
 interface AudioProps {
   selectData: any;
 }
@@ -32,7 +33,28 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
     setCurrentTime(audioRef.current!.currentTime);
     setDuration(audioRef.current!.duration);
   };
-
+const handleTenSeconds=()=>{
+  console.log("curentTime:",currentTime);
+  const minutes = Math.floor(currentTime / 60);
+    const seconds = Math.floor(currentTime % 60)
+    console.log("minutes:seconds",minutes,seconds);
+    console.log("hours",Math.floor(minutes/60));
+    console.log("minutes:",Math.floor(minutes%60));
+    
+  const afterTenSec=currentTime+10;
+  audioRef.current!.currentTime=afterTenSec;
+  setCurrentTime(afterTenSec);
+}
+const handleBackTenSec=()=>{
+  const beforeTenSec=currentTime-10;
+  audioRef.current!.currentTime=beforeTenSec;
+  setCurrentTime(beforeTenSec);
+  const minutes = Math.floor(currentTime / 60);
+    const seconds = Math.floor(currentTime % 60)
+    console.log("minutes:seconds",minutes,seconds);
+    console.log("hours",Math.floor(minutes/60));
+    console.log("minutes:",Math.floor(minutes%60));
+}
   const handleSeek = (event: any, newValue: any) => {
     const newTime = (newValue / 100) * duration;
     console.log("duration:", duration);
@@ -68,7 +90,8 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
       <IconButton onClick={handlemutedChange}>
         {muted ?<VolumeOffIcon />:<VolumeUpIcon/>}
       </IconButton>
-      <Forward10Icon sx={{ m: 2 }} />
+      <Button onClick={handleTenSeconds} disabled={currentTime>=duration}><Forward10Icon sx={{ m: 2 }} /></Button>
+      <Button onClick={handleBackTenSec} disabled={!currentTime}><Replay10Icon sx={{m:1}}/></Button>
     </Grid>
   );
 };
