@@ -4,10 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import podData from '../../constant/data';
 import { useDispatch } from "react-redux";
-import { addPodData } from '../../podslice/slice';
+import { addPodData } from '../../../services/redux/slice/slice';
 import { FC } from 'react';
 import { Grid } from '@mui/material';
-import Podheader from '../podheader/podheader';
+import Podheader from '../../layout/podheader/podheader';
 import { Link } from 'react-router-dom';
 
  const PodCard:FC=()=>{

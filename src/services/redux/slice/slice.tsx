@@ -1,14 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { podData } from '../interface/interface';
+import { podData } from '../../../interface/types';
 
 interface podcastsData{
   podcastData:podData[] 
-  audioId:number;
 }
  const initialState:podcastsData={
   podcastData:[],
-  audioId:0
  }
 
 export const podcastSlice = createSlice({
@@ -16,13 +14,12 @@ export const podcastSlice = createSlice({
     initialState,
     reducers: {
       addPodData:(state,action:PayloadAction<podData>)=>{
-        const itemInCart = state.podcastData.find((item) => item.id === action.payload.id);
+        // const itemInCart = state.podcastData.find((item) => item.id === action.payload.id);
             // console.log("itemINCart",itemInCart)
-            if(itemInCart){
-              return ;
-            }
+            // if(itemInCart){
+            //   return ;
+            // }
        state.podcastData.push(action.payload);
-       state.audioId=0;
       }
     },
   });

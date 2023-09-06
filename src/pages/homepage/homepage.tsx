@@ -1,12 +1,7 @@
-import { Grid } from '@mui/material';
-import PodCard from '../../components/card/card';
-import PlayListplayer from '../../components/playlisplayer/playlistplayer';
+import LayoutHome from '../../components/layout/index';
 const Homepage = () => {
   return (
-    <Grid sx={{display:'flex'}}>
-    <PodCard/>
-    <PlayListplayer/>
-    </Grid>
+    <LayoutHome/>
   )
 }
 

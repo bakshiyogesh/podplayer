@@ -1,8 +1,8 @@
 import { BrowserRouter, Route,Routes} from "react-router-dom";
-import Podcastplayer from "../components/PodcastPlayer/PodcastPlayer";
+import Podcastplayer from "../components/common/PodcastPlayer/PodcastPlayer";
 import Homepage from "../pages/homepage/homepage";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
+import { RootState } from "../services/redux/store/store";
 function Routing() {
     const dataPodcast=useSelector((state:RootState)=>state.podcast.podcastData);
     return (
