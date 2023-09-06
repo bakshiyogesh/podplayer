@@ -1,7 +1,12 @@
-import { Button, Grid, IconButton } from '@mui/material';
-import { useState, useRef, FC } from 'react';
-import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
-import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
+import React, { useState, useRef, FC } from "react";
+import Slider from "@mui/material/Slider";
+import IconButton from "@mui/material/IconButton";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import PauseIcon from "@mui/icons-material/Pause";
+import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import VolumeOffIcon from "@mui/icons-material/VolumeOff";
+import Forward10Icon from '@mui/icons-material/Forward10';
+import { Grid } from "@mui/material";
 interface AudioProps{
     selectData:any
 }
@@ -9,23 +14,57 @@ interface AudioProps{
 const AudioPlayer:FC<AudioProps> = ({selectData}) => {
     console.log("selectedData",selectData);
     
-    const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef= useRef<HTMLAudioElement|null>(null);
-    const togglePlay = () => {
-        if (audioRef.current?.paused) {
-          audioRef.current.play();
-          setIsPlaying(true);
-        } else {
-          audioRef.current?.pause();
-          setIsPlaying(false);
-        }
-      }
+    const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(50);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const togglePlay = () => {
+    if (audioRef.current!.paused) {
+      audioRef.current!.play();
+      setIsPlaying(true);
+    } else {
+      audioRef.current!.pause();
+      setIsPlaying(false);
+    }
+  };
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current!.currentTime);
+    setDuration(audioRef.current!.duration);
+  };
+
+  const handleSeek = (event:any, newValue:any) => {
+    const newTime = (newValue / 100) * duration;
+    audioRef.current!.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const handleVolumeChange = (event:any, newValue:any) => {
+    audioRef.current!.volume = newValue / 100;
+    setVolume(newValue);
+  };
   return (
     <Grid container sx={{background:'#454545'}}>
-        <audio  ref={audioRef}>
-            <source src={selectData} type='audio/mpeg'/>
-        </audio>
-        <Button onClick={()=>togglePlay}><IconButton>{isPlaying?<PauseCircleFilledIcon/>:<PlayCircleFilledIcon/>}</IconButton>Name</Button>
+        <audio
+        ref={audioRef}
+        src={selectData[0].audioURL}
+        onTimeUpdate={handleTimeUpdate}
+      />
+      <IconButton onClick={togglePlay}>
+        {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
+      </IconButton>
+      <Slider
+        value={(currentTime / duration) * 100}
+        onChange={handleSeek}
+        min={0}
+        max={100}
+        aria-labelledby="volume-slider"
+        style={{ width: "320px" }}
+      />
+      <IconButton onClick={() => setVolume(0)}>
+        {volume === 0 ? <VolumeOffIcon /> : <VolumeUpIcon />}
+      </IconButton>
+      <Forward10Icon/>
     </Grid>
   )
 }
