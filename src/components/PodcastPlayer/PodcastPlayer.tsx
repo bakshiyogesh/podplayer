@@ -1,6 +1,8 @@
 import { Card, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material'
 import { FC } from 'react'
 import { addPodData } from '../../podslice/slice'
+import PodcastDetails from './podcastDetails/podcastDetails'
+import AudioPlayer from '../audioComp/AudioPlayer'
 
 interface dataPod{
     dataPodcast:any
@@ -46,16 +48,9 @@ const Podcastplayer:FC<dataPod> = ({dataPodcast}) => {
         )
       })}
       </Grid>
-      <Grid sx={{width:'70vw'}}>{dataPodcast.map((item:any)=>{
-        return(
-          <>
-       <Typography variant='h3' sx={{color:'white'}}>{item.title}</Typography>
-       <Typography variant='h6' sx={{color:'white'}}>{item.audioLength}</Typography>
-       <Typography component={'div'} sx={{color:'white',fontSize:'800',lineHeight:2}}>{item.description}</Typography>
-       </>
-        )
-      })}</Grid>
+     <PodcastDetails dataPodCast={dataPodcast}/>
     </Grid>
+     <AudioPlayer selectData={dataPodcast}/>
     </>
   )
 }

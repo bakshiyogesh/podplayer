@@ -21,7 +21,7 @@ const AudioPlayer:FC<AudioProps> = ({selectData}) => {
         }
       }
   return (
-    <Grid>
+    <Grid container sx={{background:'#454545'}}>
         <audio  ref={audioRef}>
             <source src={selectData} type='audio/mpeg'/>
         </audio>
