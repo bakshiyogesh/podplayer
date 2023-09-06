@@ -33,7 +33,7 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
     setCurrentTime(audioRef.current!.currentTime);
     setDuration(audioRef.current!.duration);
   };
-const handleTenSeconds=()=>{
+const handleForwTenSeconds=()=>{
   console.log("curentTime:",currentTime);
   const minutes = Math.floor(currentTime / 60);
     const seconds = Math.floor(currentTime % 60)
@@ -56,6 +56,8 @@ const handleBackTenSec=()=>{
     console.log("minutes:",Math.floor(minutes%60));
 }
   const handleSeek = (event: any, newValue: any) => {
+    console.log("duration:",duration);
+    console.log("neValue",newValue)
     const newTime = (newValue / 100) * duration;
     console.log("duration:", duration);
 
@@ -68,6 +70,7 @@ const handleBackTenSec=()=>{
     audioRef.current!.muted = !audioRef.current?.muted;
     setMuted(!muted);
   };
+  
   return (
     <Grid container sx={{ background: "#454545",width:'100vw'}}>
       <audio
@@ -90,7 +93,7 @@ const handleBackTenSec=()=>{
       <IconButton onClick={handlemutedChange}>
         {muted ?<VolumeOffIcon />:<VolumeUpIcon/>}
       </IconButton>
-      <Button onClick={handleTenSeconds} disabled={currentTime>=duration}><Forward10Icon sx={{ m: 2 }} /></Button>
+      <Button onClick={handleForwTenSeconds} disabled={currentTime>=duration}><Forward10Icon sx={{ m: 2 }} /></Button>
       <Button onClick={handleBackTenSec} disabled={!currentTime}><Replay10Icon sx={{m:1}}/></Button>
     </Grid>
   );
