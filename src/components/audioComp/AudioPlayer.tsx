@@ -16,7 +16,7 @@ const AudioPlayer:FC<AudioProps> = ({selectData}) => {
     
     const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const togglePlay = () => {
@@ -35,6 +35,9 @@ const AudioPlayer:FC<AudioProps> = ({selectData}) => {
 
   const handleSeek = (event:any, newValue:any) => {
     const newTime = (newValue / 100) * duration;
+    console.log("duration:",duration);
+    
+    console.log("newTime:",newTime)
     audioRef.current!.currentTime = newTime;
     setCurrentTime(newTime);
   };
@@ -60,11 +63,12 @@ const AudioPlayer:FC<AudioProps> = ({selectData}) => {
         max={100}
         aria-labelledby="volume-slider"
         style={{ width: "320px" }}
+        sx={{m:2}}
       />
-      <IconButton onClick={() => setVolume(0)}>
-        {volume === 0 ? <VolumeOffIcon /> : <VolumeUpIcon />}
+      <IconButton onClick={() => setVolume(!volume)}>
+        {volume ? <VolumeOffIcon /> : <VolumeUpIcon />}
       </IconButton>
-      <Forward10Icon/>
+      <Forward10Icon sx={{m:2}}/>
     </Grid>
   )
 }

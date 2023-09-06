@@ -13,7 +13,6 @@ interface podcastsData{
 
 export const podcastSlice = createSlice({
     name: 'podcast',
-    // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
       addPodData:(state,action:PayloadAction<podData>)=>{
