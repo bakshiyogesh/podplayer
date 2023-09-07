@@ -1,9 +1,8 @@
 import { Grid, Typography } from '@mui/material'
-import React, { FC } from 'react'
+import  { FC } from 'react'
 
-type Props = {}
 
-const PodHeader:FC = (props: Props) => {
+const PodHeader:FC = () => {
   return (
     <Grid sx={{background:' linear-gradient(156deg, rgba(158,41,185,1) 0%, rgba(0,0,1,1) 0%, rgba(29,121,70,1) 57%)',width:'60vw',borderRadius:'4px',maxHeight:'20vh'}}>
         <Typography variant='h1' color={'white'} sx={{fontSize:'600',fontStyle:"oblique"}}>Podcasts</Typography>

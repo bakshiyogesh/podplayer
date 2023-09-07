@@ -55,7 +55,7 @@ const handleBackTenSec=()=>{
     console.log("hours",Math.floor(minutes/60));
     console.log("minutes:",Math.floor(minutes%60));
 }
-  const handleSeek = (event: any, newValue: any) => {
+  const handleSeek = ( newValue: any) => {
     console.log("duration:",duration);
     console.log("neValue",newValue)
     const newTime = (newValue / 100) * duration;
@@ -66,7 +66,7 @@ const handleBackTenSec=()=>{
     setCurrentTime(newTime);
   };
 
-  const handlemutedChange = (event: any,) => {
+  const handlemutedChange = () => {
     audioRef.current!.muted = !audioRef.current?.muted;
     setMuted(!muted);
   };

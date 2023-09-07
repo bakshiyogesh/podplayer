@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
-import PodCard from '../../common/card/Card';
-import PlayListplayer from '../../common/playlisPlayer/PlaylistPlayer';
+import PodCard from '../common/card/Card';
+import PlayListplayer from '../common/playlisPlayer/PlaylistPlayer';
 
 
 const LayoutHome = () => {

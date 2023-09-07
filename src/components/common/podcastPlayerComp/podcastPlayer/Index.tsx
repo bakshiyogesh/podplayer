@@ -1,6 +1,5 @@
 import { Card, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material'
 import { FC } from 'react'
-import { addPodData } from '../../../../services/redux/slice/Slice';
 import PodcastDetails from '../podcastDetails/PodcastDetails';
 import AudioPlayer from '../../audioComp/AudioPlayer'
 
