@@ -9,7 +9,7 @@ interface podcastsData{
   podcastData:[],
  }
 
-export const podcastSlice = createSlice({
+export const PodcastSlice = createSlice({
     name: 'podcast',
     initialState,
     reducers: {
@@ -19,10 +19,11 @@ export const podcastSlice = createSlice({
             // if(itemInCart){
             //   return ;
             // }
-       state.podcastData.push(action.payload);
+       state.podcastData=[{...action.payload
+      }];
       }
     },
   });
-  export const{addPodData}=podcastSlice.actions;
-  export default podcastSlice.reducer; 
+  export const{addPodData}=PodcastSlice.actions;
+  export default PodcastSlice.reducer; 
   

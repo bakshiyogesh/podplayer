@@ -1,6 +1,6 @@
-import { podData } from "../../interface/types";
+import { podData } from "../interface/types";
 
-const podData :podData[]= [
+const CONST_POD_DATA :podData[]= [
   {
     id: 1,
     audioURL:
@@ -107,4 +107,4 @@ const podData :podData[]= [
     audioLength:'1:28:00'
   }
 ];
-export default podData;
+export default CONST_POD_DATA;

@@ -1,8 +1,8 @@
-import LayoutHome from '../../components/layout/index';
-const Homepage = () => {
+import LayoutHome from '../../components/layout/index/Index';
+const HomePage = () => {
   return (
     <LayoutHome/>
   )
 }
 
-export default Homepage;
+export default HomePage;

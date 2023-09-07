@@ -1,13 +1,13 @@
 import { Card, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material'
 import { FC } from 'react'
-import { addPodData } from '../../../../services/redux/slice/slice'
-import PodcastDetails from '../podcastDetails/podcastDetails'
+import { addPodData } from '../../../../services/redux/slice/Slice';
+import PodcastDetails from '../podcastDetails/PodcastDetails';
 import AudioPlayer from '../../audioComp/AudioPlayer'
 
 interface dataPod{
     dataPodcast:any
 }
-const Podcastplayer:FC<dataPod> = ({dataPodcast}) => {
+const PodcastPlayer:FC<dataPod> = ({dataPodcast}) => {
     const backGround='../../../public/background.jpg'
   return (
    <>
@@ -55,4 +55,4 @@ const Podcastplayer:FC<dataPod> = ({dataPodcast}) => {
   )
 }
 
-export default Podcastplayer
+export default PodcastPlayer;
