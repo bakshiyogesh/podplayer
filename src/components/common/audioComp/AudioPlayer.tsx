@@ -33,13 +33,7 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
     setCurrentTime(audioRef.current!.currentTime);
     setDuration(audioRef.current!.duration);
   };
-const handleForwTenSeconds=()=>{
-  // const minutes = Math.floor(currentTime / 60);
-  //   const seconds = Math.floor(currentTime % 60)
-    // console.log("minutes:seconds",minutes,seconds);
-    // console.log("hours",Math.floor(minutes/60));
-    // console.log("minutes:",Math.floor(minutes%60));
-    
+const handleForwTenSeconds=()=>{  
   const afterTenSec=currentTime+10;
   audioRef.current!.currentTime=afterTenSec;
   setCurrentTime(afterTenSec);
@@ -48,19 +42,10 @@ const handleBackTenSec=()=>{
   const beforeTenSec=currentTime-10;
   audioRef.current!.currentTime=beforeTenSec;
   setCurrentTime(beforeTenSec);
-  // const minutes = Math.floor(currentTime / 60);
-  //   const seconds = Math.floor(currentTime % 60)
-    // console.log("minutes:seconds",minutes,seconds);
-    // console.log("hours",Math.floor(minutes/60));
-    // console.log("minutes:",Math.floor(minutes%60));
+  
 }
   const handleSeek = ( newValue: any) => {
-    console.log("duration:",duration);
-    console.log("neValue",newValue)
     const newTime = (newValue / 100) * duration;
-    console.log("duration:", duration);
-
-    console.log("newTime:", newTime);
     audioRef.current!.currentTime = newTime;
     setCurrentTime(newTime);
   };
