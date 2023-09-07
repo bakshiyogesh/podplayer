@@ -14,11 +14,6 @@ export const PodcastSlice = createSlice({
     initialState,
     reducers: {
       addPodData:(state,action:PayloadAction<podData>)=>{
-        // const itemInCart = state.podcastData.find((item) => item.id === action.payload.id);
-            // console.log("itemINCart",itemInCart)
-            // if(itemInCart){
-            //   return ;
-            // }
        state.podcastData=[{...action.payload
       }];
       }
