@@ -2,10 +2,18 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/routes/*": ["./src/routes/*"],
+      "@/services/*":["./src/services/*"],
+      "@constant/*":["./src/constant/*"],
+      "@type/*":["./src/interface/*"]
+    },
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

@@ -1,9 +1,8 @@
 import { Card, CardContent, CardMedia, Grid,Typography } from '@mui/material'
-import { FC } from 'react'
-import PodcastDetails from '../podcastDetails/PodcastDetails';
-import AudioPlayer from '../../audioComp/AudioPlayer'
-import { podData } from '../../../../interface/types';
-
+import { FC } from 'react';
+import PodcastDetails from '@components/common/podcastPlayerComp/podcastDetails/PodcastDetails';
+import AudioPlayer from '@components/common/audioComp/AudioPlayer';
+import { podData } from '@type/types';
 interface dataPod{
     dataPodcast:podData[]
 }

@@ -1,10 +1,10 @@
 import './App.css'
-import Routing from './routes/Routing'
+import Routes from "@/routes/Routing"
 function App() {
 
   return (
     <>
-    <Routing/>
+    <Routes/>
       </>
   )
 }
