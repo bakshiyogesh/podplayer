@@ -6,7 +6,6 @@
     "paths": {
       "@components/*": ["/components/*"],
       "@pages/*": ["/pages/*"],
-      "@routes/*": ["/routes/*"],
       "@services/*":["/services/*"],
       "@constant/*":["/constant/*"],
       "@type/*":["/interface/*"]
