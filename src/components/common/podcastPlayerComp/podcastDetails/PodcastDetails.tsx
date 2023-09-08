@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@mui/material'
 import  { FC } from 'react'
-import { podData } from '../../../../interface/types'
+import { podData } from '@type/types';
 
 interface dataPod{
     dataPodCast:podData[]
