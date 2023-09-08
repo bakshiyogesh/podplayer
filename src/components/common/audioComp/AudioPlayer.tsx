@@ -8,12 +8,12 @@ import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import Forward10Icon from "@mui/icons-material/Forward10";
 import Replay10Icon from '@mui/icons-material/Replay10';
 import { Button, Grid } from "@mui/material";
+import { podData } from "../../../interface/types";
 interface AudioProps {
-  selectData: any;
+  selectData: podData[];
 }
 
 const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
-  console.log("selectedData", selectData);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);

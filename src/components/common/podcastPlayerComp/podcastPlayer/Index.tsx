@@ -2,9 +2,10 @@ import { Card, CardContent, CardMedia, Grid,Typography } from '@mui/material'
 import { FC } from 'react'
 import PodcastDetails from '../podcastDetails/PodcastDetails';
 import AudioPlayer from '../../audioComp/AudioPlayer'
+import { podData } from '../../../../interface/types';
 
 interface dataPod{
-    dataPodcast:any
+    dataPodcast:podData[]
 }
 const PodcastPlayer:FC<dataPod> = ({dataPodcast}) => {
     const backGround='../../../public/background.jpg'

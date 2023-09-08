@@ -1,8 +1,9 @@
 import { Grid, Typography } from '@mui/material'
 import  { FC } from 'react'
+import { podData } from '../../../../interface/types'
 
 interface dataPod{
-    dataPodCast:any
+    dataPodCast:podData[]
 }
 const PodcastDetails:FC<dataPod> = ({dataPodCast}) => {
   return (
