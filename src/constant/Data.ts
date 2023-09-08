@@ -1,4 +1,4 @@
-import { podData } from "@type/types";
+import { podData } from "interface/types";
 
 const CONST_POD_DATA :podData[]= [
   {

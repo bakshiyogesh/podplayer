@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { podData } from '@type/types';
+import { podData } from 'interface/types';
 
 interface podcastsData{
   podcastData:podData[] 
