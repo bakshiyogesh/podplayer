@@ -6,3 +6,8 @@ export interface podData{
     description:string,
     audioLength:string,
 }
+export interface videoData{
+    id:number,
+    videoURL:string,
+    imgSRC:string
+}

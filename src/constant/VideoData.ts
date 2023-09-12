@@ -1,0 +1,63 @@
+import { videoData } from "interface/types";
+
+const CONST_VIDEO_DATA:videoData[]=[{
+    id:1,
+    videoURL:'/public/assets/amazon.mp4',
+    imgSRC:'/public/assets/amazon.webp',
+},
+{
+    id:2,
+    videoURL:'/public/assets/boats.mp4',
+    imgSRC:'/public/assets/boats.jpeg'
+},
+{
+    id:3,
+    videoURL:'/public/assets/buildings.mp4',
+    imgSRC:'/public/assets/buildings.jpeg'
+},
+{
+    id:4,
+    videoURL:'/public/assets/canada.mp4',
+    imgSRC:'/public/assets/canada.jpeg'
+},
+{
+ id:5,
+ videoURL:'/public/assets/clouds_above_home.mp4',
+ imgSRC:'/public/assets/clouds_above_home.jpeg'
+},
+{
+id:6,
+videoURL:'/public/assets/drone.mp4',
+imgSRC:'/public/assets/drone.webp'
+},
+{
+id:7,
+videoURL:'/public/assets/greenary.mp4',
+imgSRC:'/public/assets/greenary.jpeg'
+},
+{
+id:8,
+videoURL:'/public/assets/island.mp4',
+imgSRC:'/public/assets/island.jpeg'
+},
+{
+    id:9,
+    videoURL:'/public/assets/oceans.mp4',
+    imgSRC:'/public/assets/oceans.jpeg'
+},
+{
+    id:10,
+    videoURL:'/public/assets/pigeons.mp4',
+    imgSRC:'/public/assets/pigeons.jpeg'
+},
+{
+    id:11,
+    videoURL:'/public/assets/sea_secenry.mp4',
+    imgSRC:'/public/assets/sea_secenry.jpeg'
+},{
+    id:12,
+    videoURL:'/public/assets/video_1.mp4',
+    imgSRC:'/public/assets/video_1.jpeg'
+}
+]
+export default CONST_VIDEO_DATA;
