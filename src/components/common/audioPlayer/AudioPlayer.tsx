@@ -1,4 +1,4 @@
-import { useState, useRef, FC } from "react";
+import { useState, useRef, FC,useCallback} from "react";
 import Slider from "@mui/material/Slider";
 import IconButton from "@mui/material/IconButton";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -17,7 +17,8 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const[state,setState]=useState({isPlay:false,isMuted:false,duration:0,currentTime:0});
-  const togglePlay = () => {
+
+  const togglePlay = useCallback(():void => {
     if (audioRef.current!.paused) {
       audioRef.current!.play();
       setState({...state,isPlay:true});
@@ -25,34 +26,32 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
       audioRef.current!.pause();
      setState({...state,isPlay:false});
     }
-  };
-  const handleTimeUpdate = () => {
+},[audioRef]);
+  const handleTimeUpdate =useCallback(():void => {
     setState({...state,currentTime:audioRef.current!.currentTime});
     setState({...state,duration:audioRef.current!.duration});
-  };
-const handleForwTenSeconds=()=>{  
+  },[]);
+const handleForwTenSeconds=useCallback(()=>{  
   const afterTenSec=state.currentTime+10;
-  console.log("currentTime:",afterTenSec);
   audioRef.current!.currentTime=afterTenSec;
   setState({...state,currentTime:afterTenSec});
-}
-const handleBackTenSec=()=>{
+},[]);
+const handleBackTenSec=useCallback(()=>{
   const beforeTenSec=state.currentTime-10;
-  console.log("beforeTenSec",beforeTenSec)
   audioRef.current!.currentTime=beforeTenSec;
   setState({...state,currentTime:beforeTenSec});
   
-}
-  const handleSeek = (e:Event,newValue: number|number[]):void => {
+},[]);
+  const handleSeek =useCallback((e:Event,newValue: number|number[]):void => {
     const newTime = (+newValue / 100) * state.duration;
     audioRef.current!.currentTime = newTime;
     setState({...state,currentTime:newTime});
-  };
+  },[]);
 
-  const handlemutedChange = () => {
+  const handlemutedChange=useCallback(():void=> {
     audioRef.current!.muted = !audioRef.current?.muted;
     setState({...state,isMuted:!state.isMuted})
-  };
+  },[]);
   
   return (
     <Grid container sx={{ background: "#454545",width:'100vw'}}>
