@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./style.css";
 import { Navigation ,EffectCoverflow} from "swiper/modules";
+// import TransitionsModal from "./ModalVideo";
 
-export default function Modal() {
+export default function Model() {
   return (
     <>
       <Swiper
@@ -14,16 +14,16 @@ export default function Modal() {
         navigation={true}
         centeredSlides={true}
         slidesPerView={"auto"}
-        spaceBetween={40}
+        spaceBetween={20}
         coverflowEffect={{
-          rotate: 10,
-          stretch:30,
+          rotate: 0,
+          stretch:0,
           depth: 100,
           modifier: 1,
           slideShadows: true,
         }}
         modules={[EffectCoverflow,Navigation]}
-        className="mySwiper"
+        className="mySwipe"
       >
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
@@ -53,6 +53,7 @@ export default function Modal() {
           <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
         </SwiperSlide>
       </Swiper>
+      {/* <TransitionsModal/> */}
     </>
   );
 }

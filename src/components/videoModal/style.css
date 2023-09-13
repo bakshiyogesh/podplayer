@@ -15,9 +15,13 @@
     display: block;
     width: 100%;
   }
-  .swiper{
-    background-color: antiquewhite;
+  .mySwipe{
+    background-color:#fff;
+
   }
-  .swiper-button-prev,.swiper-button-forw{
-    margin:none;
+  .swiper-button-prev{
+    margin-left:360px;
+  }
+  .swiper-button-next{
+    margin-right: 360px;
   }

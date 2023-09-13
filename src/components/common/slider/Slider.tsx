@@ -4,18 +4,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./style.css";
 import CONST_VIDEO_DATA from 'constant/VideoData';
-import { FC, useCallback } from 'react';
+import { EventHandler, FC, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { videoData } from 'interface/types';
 import { addVideoId } from 'services/storeRedux/slice/Slice';
+// import TransitionsModal from 'components/videoModal/ModalVideo';
 interface VideoProps {
   videodata: videoData[];
 }
 const Slider:FC<VideoProps>= ({videodata}) => {
+  // const [open, setOpen] = useState(false);
+  // const handleOpen= () => setOpen(true);
+  // const handleClose = () => setOpen(false);
   // const slicedData=vide
   const dispatch=useDispatch();
-  // const handlerVideoIdChange=useCallback((index:any):void=>{
+  // const handlerVideoIdChange=useCallback((index:any)=>{
   //   dispatch(addVideoId(index.activeIndex));
+  //   setOpen(true);
+  //   // <TransitionsModal handleOpen={handleOpen} handleClose={handleClose}/>
   // },[])
     return(
     <Swiper
@@ -28,7 +34,7 @@ const Slider:FC<VideoProps>= ({videodata}) => {
       >
         {videodata.map((item:any,index:number) => {
           return (
-            <SwiperSlide key={item.id} onClick={()=>dispatch(addVideoId(item.id))}>
+            <SwiperSlide key={item.id} onClick={()=>{dispatch(addVideoId(item.id))}}>
               <img src={item.imgSRC}  alt="number" />
             </SwiperSlide>
           );

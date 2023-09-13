@@ -1,7 +1,6 @@
 import Slider from "components/common/slider/Slider";
 import Home from "components/layout/Index";
 import PodHeader from 'components/layout/podHeader/PodCastHeader';
-import Modal from "components/videoModal/Modal";
 import CONST_VIDEO_DATA from "constant/VideoData";
 import { FC } from "react";
 import { useSelector } from "react-redux";
@@ -14,7 +13,6 @@ const HomePage:FC= () => {
     <PodHeader/>
     <Slider videodata={CONST_VIDEO_DATA}/>
     <Home/>
-    <Modal/>
     </>
   )
 }
