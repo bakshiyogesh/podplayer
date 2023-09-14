@@ -30,12 +30,10 @@ export default function TransitionsModal({open,handleClose}) {
           },
         }}
       >
-        {/* <Fade in={open}> */}
           <Box sx={style}>
           <Button onClick={handleClose} sx={{direction:'rtl'}}>Close</Button>
             <Model/>
           </Box>
-        {/* </Fade> */}
       </Modal>
     </Grid>
   );

@@ -7,7 +7,7 @@
   .mySwipe{
     background-position: center;
     background-size: cover;
-    width:100%;
+    width:100vw;
     height:550px;
     background-color: black;
   }
