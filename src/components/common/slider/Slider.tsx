@@ -3,27 +3,29 @@ import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./style.css";
-import CONST_VIDEO_DATA from 'constant/VideoData';
-import { EventHandler, FC, useCallback } from 'react';
+import {FC, useCallback,useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { videoData } from 'interface/types';
-import { addVideoId } from 'services/storeRedux/slice/Slice';
-// import TransitionsModal from 'components/videoModal/ModalVideo';
+import { addVideoData, addVideoId } from 'services/storeRedux/slice/Slice';
+import TransitionsModal from 'components/videoModal/ModalVideo';
+import CONST_VIDEO_DATA from 'constant/VideoData';
 interface VideoProps {
-  videodata: videoData[];
+  videodata:videoData[];
 }
 const Slider:FC<VideoProps>= ({videodata}) => {
-  // const [open, setOpen] = useState(false);
-  // const handleOpen= () => setOpen(true);
-  // const handleClose = () => setOpen(false);
+  console.log("videoData:",videodata);
+  
+  const [open, setOpen] = useState(false);
+  const handleOpen= () => setOpen(true);
+  const handleClose = () => setOpen(false);
   // const slicedData=vide
   const dispatch=useDispatch();
   // const handlerVideoIdChange=useCallback((index:any)=>{
   //   dispatch(addVideoId(index.activeIndex));
   //   setOpen(true);
-  //   // <TransitionsModal handleOpen={handleOpen} handleClose={handleClose}/>
   // },[])
     return(
+      <>
     <Swiper
         direction={"horizontal"}
         slidesPerView={6}
@@ -31,16 +33,23 @@ const Slider:FC<VideoProps>= ({videodata}) => {
         mousewheel={true}
         modules={[Mousewheel]}
         className="mySwiper"
+        onLoad={()=>dispatch(addVideoData(videodata))}
       >
         {videodata.map((item:any,index:number) => {
           return (
-            <SwiperSlide key={item.id} onClick={()=>{dispatch(addVideoId(item.id))}}>
+            <SwiperSlide key={item.id} onClick={()=>{
+              dispatch(addVideoId(item.id));
+              handleOpen();
+            }} className='main-slider'>
               <img src={item.imgSRC}  alt="number" />
             </SwiperSlide>
           );
         })}
       </Swiper>
+      <TransitionsModal open={open} handleClose={handleClose}/>
+      </>
     )
 }
 
 export default Slider;
+

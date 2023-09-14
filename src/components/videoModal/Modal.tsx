@@ -1,59 +1,54 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "./style.css";
 import { Navigation ,EffectCoverflow} from "swiper/modules";
-// import TransitionsModal from "./ModalVideo";
-
+import { useSelector } from "react-redux";
+import { RootState } from "services/storeRedux/store/Store";
+import CONST_VIDEO_DATA from "constant/VideoData";
 export default function Model() {
+  const selector=useSelector((state:RootState)=>state.podcast.videoData);
+  const selectedID=useSelector((state:RootState)=>state.podcast.id);
+  const videoData=CONST_VIDEO_DATA.slice(selectedID-1);
+  console.log("selector data:",selector);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = (swiper:any) => {
+    setActiveIndex(swiper.realIndex);
+  };
+  console.log("activeIndex:",activeIndex);
+  
   return (
     <>
       <Swiper
         effect={"coverflow"}
         navigation={true}
         centeredSlides={true}
-        slidesPerView={"auto"}
-        spaceBetween={20}
+        slidesPerView={3}
+        spaceBetween={50}
         coverflowEffect={{
           rotate: 0,
-          stretch:0,
-          depth: 100,
-          modifier: 1,
+          stretch:20,
+          depth: 450,
+          modifier:3,
           slideShadows: true,
         }}
         modules={[EffectCoverflow,Navigation]}
         className="mySwipe"
+        onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        {videoData.map((element,index)=>{
+          console.log("element.id",element.id)
+          return(
+            <SwiperSlide key={element.id} >
+              <video width="330" height="360"  src={element.videoURL} controls={activeIndex===index?true:false} onContextMenu={(e)=>e.preventDefault()} controlsList="nodownload" autoPlay={activeIndex===index?true:false}/>
+                            
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
-      {/* <TransitionsModal/> */}
     </>
   );
 }
