@@ -6,8 +6,7 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "services/storeRedux/store/Store";
 const HomePage:FC= () => {
-  const selectedID=useSelector((state:RootState)=>state.podcast.id);
-  console.log("selected Id:",selectedID);
+  // const selectedID=useSelector((state:RootState)=>state.podcast.id);
   return (
     <>
     <PodHeader/>

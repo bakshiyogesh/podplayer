@@ -13,7 +13,6 @@ interface VideoProps {
   videodata:videoData[];
 }
 const Slider:FC<VideoProps>= ({videodata}) => {
-  console.log("videoData:",videodata);
   
   const [open, setOpen] = useState(false);
   const handleOpen= () => setOpen(true);
