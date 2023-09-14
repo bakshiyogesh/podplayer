@@ -3,12 +3,11 @@ import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./style.css";
-import {FC, useCallback,useState} from 'react';
+import {FC,useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { videoData } from 'interface/types';
-import { addVideoData, addVideoId } from 'services/storeRedux/slice/Slice';
+import { addVideoId } from 'services/storeRedux/slice/Slice';
 import TransitionsModal from 'components/videoModal/ModalVideo';
-import CONST_VIDEO_DATA from 'constant/VideoData';
 interface VideoProps {
   videodata:videoData[];
 }
@@ -32,9 +31,9 @@ const Slider:FC<VideoProps>= ({videodata}) => {
         mousewheel={true}
         modules={[Mousewheel]}
         className="mySwiper"
-        onLoad={()=>dispatch(addVideoData(videodata))}
+        // onLoad={()=>dispatch(addVideoData(videodata))}
       >
-        {videodata.map((item:any,index:number) => {
+        {videodata.map((item:any) => {
           return (
             <SwiperSlide key={item.id} onClick={()=>{
               dispatch(addVideoId(item.id));

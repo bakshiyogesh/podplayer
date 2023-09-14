@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "services/storeRedux/store/Store";
 import CONST_VIDEO_DATA from "constant/VideoData";
 export default function Model() {
-  const selector=useSelector((state:RootState)=>state.podcast.videoData);
   const selectedID=useSelector((state:RootState)=>state.podcast.id);
   const videoData=CONST_VIDEO_DATA.slice(selectedID-1);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,11 +24,11 @@ export default function Model() {
         navigation={true}
         centeredSlides={true}
         slidesPerView={3}
-        spaceBetween={50}
+        spaceBetween={60}
         coverflowEffect={{
           rotate: 0,
           stretch:20,
-          depth: 450,
+          depth: 250,
           modifier:3,
           slideShadows: true,
         }}
@@ -40,7 +39,7 @@ export default function Model() {
         {videoData.map((element,index)=>{
           return(
             <SwiperSlide key={element.id} >
-              <video width="330" height="360"  src={element.videoURL} controls={activeIndex===index?true:false} onContextMenu={(e)=>e.preventDefault()}  autoPlay={activeIndex===index?true:false}/>
+              <video width="330" height="360"  src={element.videoURL} controls={activeIndex===index?true:false} onContextMenu={(e)=>e.preventDefault()} controlsList="nodownload" autoPlay={activeIndex===index?true:false}/>
                             
             </SwiperSlide>
           )
