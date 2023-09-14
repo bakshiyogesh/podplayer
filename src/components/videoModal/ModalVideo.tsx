@@ -30,7 +30,7 @@ export default function TransitionsModal({open,handleClose}) {
         }}
       >
           <Box sx={style}>
-          <Button onClick={handleClose} sx={{direction:'rtl'}}>Close</Button>
+          <Button onClick={handleClose} sx={{ml:'85vw'}} variant='contained'>Close</Button>
             <Model/>
           </Box>
       </Modal>

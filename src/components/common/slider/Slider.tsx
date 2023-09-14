@@ -16,12 +16,7 @@ const Slider:FC<VideoProps>= ({videodata}) => {
   const [open, setOpen] = useState(false);
   const handleOpen= () => setOpen(true);
   const handleClose = () => setOpen(false);
-  // const slicedData=vide
   const dispatch=useDispatch();
-  // const handlerVideoIdChange=useCallback((index:any)=>{
-  //   dispatch(addVideoId(index.activeIndex));
-  //   setOpen(true);
-  // },[])
     return(
       <>
     <Swiper
@@ -31,7 +26,6 @@ const Slider:FC<VideoProps>= ({videodata}) => {
         mousewheel={true}
         modules={[Mousewheel]}
         className="mySwiper"
-        // onLoad={()=>dispatch(addVideoData(videodata))}
       >
         {videodata.map((item:any) => {
           return (

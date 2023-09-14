@@ -29,7 +29,6 @@ const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
 },[state]);
   const handleTimeUpdate =useCallback(()=> {
     setState({...state,currentTime:audioRef.current!.currentTime,duration:audioRef.current!.duration  });
-    // setState({...state,duration:audioRef.current!.duration});
   },[state]);
 const handleForwTenSeconds=useCallback(()=>{  
   const afterTenSec=state.currentTime+10;

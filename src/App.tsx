@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PodcastPlayer from "components/common/podcastPlayerComponents/podcastPlayer/Index";
-import HomePage from "pages/homePage/HomePage";
+import HomePage from "pages/homePage/homepage";
 import { useSelector } from "react-redux";
 import { RootState } from "services/storeRedux/store/Store";
 function App() {

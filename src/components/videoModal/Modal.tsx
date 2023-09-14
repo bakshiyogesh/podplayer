@@ -37,9 +37,12 @@ export default function Model() {
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
         {videoData.map((element,index)=>{
+          console.log(activeIndex,"activeIndex");
+          console.log("index",index);
+          
           return(
             <SwiperSlide key={element.id} >
-              <video width="330" height="360"  src={element.videoURL} controls={activeIndex===index?true:false} onContextMenu={(e)=>e.preventDefault()} controlsList="nodownload" autoPlay={activeIndex===index?true:false}/>
+              <video width="330" height="360"  src={element.videoURL} controls={activeIndex===index?true:false} onContextMenu={(e)=>e.preventDefault()} controlsList="nodownload" autoPlay={true}/>
                             
             </SwiperSlide>
           )
