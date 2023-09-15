@@ -14,8 +14,8 @@ interface podcastsData{
   id:0
  }
 
-export const PodcastSlice = createSlice({
-    name: 'podcast',
+export const MediaMomentumSlice = createSlice({
+    name: 'MediaMomentum',
     initialState,
     reducers: {
       addPodData:(state,action:PayloadAction<podData>)=>{
@@ -34,6 +34,6 @@ export const PodcastSlice = createSlice({
       }
     },
   });
-  export const{addPodData,addVideoData,addVideoId}=PodcastSlice.actions;
-  export default PodcastSlice.reducer; 
+  export const{addPodData,addVideoData,addVideoId}=MediaMomentumSlice.actions;
+  export default MediaMomentumSlice.reducer; 
   

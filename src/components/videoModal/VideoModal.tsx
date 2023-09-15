@@ -2,7 +2,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
-import Model from './Modal';
+import Model from './ModalSlider';
 import { Grid } from '@mui/material';
 const style = {
   width: '100vw',

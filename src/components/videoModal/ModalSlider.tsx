@@ -10,8 +10,8 @@ import { RootState } from "services/storeRedux/store/Store";
 import Spinner from "components/videoModal/Spinner";
 // import CONST_VIDEO_DATA from "constant/VideoData";
 export default function Model() {
-  const selectedID=useSelector((state:RootState)=>state.podcast.id);
-  const videoDataSelected=useSelector((state:RootState)=>state.podcast.videoData);
+  const selectedID=useSelector((state:RootState)=>state.mediamomentum.id);
+  const videoDataSelected=useSelector((state:RootState)=>state.mediamomentum.videoData);
   const videoData=videoDataSelected[0].slice(selectedID-1);
   const [activeIndex, setActiveIndex] = useState(0);
   const[snapIndex,setSnapIndex]=useState(0);
