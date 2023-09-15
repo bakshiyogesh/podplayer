@@ -7,7 +7,7 @@ import {FC,useEffect,useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { videoData } from 'interface/types';
 import { addVideoData, addVideoId } from 'services/storeRedux/slice/Slice';
-import TransitionsModal from 'components/videoModal/ModalVideo';
+import TransitionsModal from 'components/videoModal/VideoModal';
 interface VideoProps {
   videodata:videoData[];
 }
