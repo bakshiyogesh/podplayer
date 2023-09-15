@@ -1,7 +1,7 @@
-import LayoutHome from "@components/layout/Index";
+import Home from "components/layout/Index";
 const HomePage = () => {
   return (
-    <LayoutHome/>
+    <Home/>
   )
 }
 

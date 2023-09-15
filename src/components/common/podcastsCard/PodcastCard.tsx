@@ -2,12 +2,12 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import podData from '@constant/Data';
+import CONST_POD_DATA from 'constant/Data';
 import { useDispatch } from "react-redux";
-import {addPodData} from '@/services/storeRedux/slice/Slice';
+import {addPodData} from 'services/storeRedux/slice/Slice';
 import { FC } from 'react';
 import { Grid } from '@mui/material';
-import PodHeader from '@components/layout/podHeader/PodHeader';
+import PodHeader from 'components/layout/podHeader/PodCastHeader';
 import { Link } from 'react-router-dom';
 
  const PodCard:FC=()=>{
@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
         <Grid container sx={{display:'flex'}} maxWidth={'100%'}>
           <PodHeader/>
           <Grid item sx={{background:'#1F1E1E',borderRadius:'4px',display:'flex',maxWidth:'60vw',justifyContent:'flex-start',flexWrap:'wrap'}} >
-    {podData.map((item)=>{
+    {CONST_POD_DATA.map((item)=>{
         return(
             <>
                 <Card sx={{ Width:200,background:'#1F1E1E',m:3}} key={item.id}>

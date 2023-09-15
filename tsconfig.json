@@ -2,14 +2,13 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@/pages/*": ["./src/pages/*"],
-      "@/routes/*": ["./src/routes/*"],
-      "@/services/*":["./src/services/*"],
-      "@constant/*":["./src/constant/*"],
-      "@type/*":["./src/interface/*"]
+      "@components/*": ["/components/*"],
+      "@pages/*": ["/pages/*"],
+      "@services/*":["/services/*"],
+      "@constant/*":["/constant/*"],
+      "@type/*":["/interface/*"]
     },
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",

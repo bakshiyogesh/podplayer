@@ -8,7 +8,7 @@ import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import Forward10Icon from "@mui/icons-material/Forward10";
 import Replay10Icon from '@mui/icons-material/Replay10';
 import { Button, Grid } from "@mui/material";
-import { podData } from "../../../interface/types";
+import {podData} from 'interface/types';
 interface AudioProps {
   selectData: podData[];
 }
@@ -44,8 +44,8 @@ const handleBackTenSec=()=>{
   setCurrentTime(beforeTenSec);
   
 }
-  const handleSeek = ( newValue: any) => {
-    const newTime = (newValue / 100) * duration;
+  const handleSeek = (e:Event,newValue: number|number[]):void => {
+    const newTime = (+newValue / 100) * duration;
     audioRef.current!.currentTime = newTime;
     setCurrentTime(newTime);
   };

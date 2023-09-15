@@ -1,9 +1,9 @@
 import { Grid } from '@mui/material';
-import PodCard from '@components/common/card/Card';
-import PlayListPlayer from '@components/common/playlisPlayer/PlaylistPlayer';
+import PodCard from 'components/common/podcastsCard/PodcastCard';
+import PlayListPlayer from 'components/common/playlistPlayer/PlaylistPlayer';
 
 
-const LayoutHome = () => {
+const Home = () => {
   return (
     <Grid sx={{display:'flex'}}>
     <PodCard/>
@@ -12,4 +12,4 @@ const LayoutHome = () => {
   )
 }
 
-export default LayoutHome;
+export default Home;
