@@ -4,9 +4,10 @@ import { podData,videoData} from 'interface/types';
 
 interface podcastsData{
   podcastData:podData[],
-  videoData:videoData[],
+  videoData:Array<videoData>[],
   id:number
 }
+
  const initialState:podcastsData={
   podcastData:[],
   videoData:[],
@@ -21,11 +22,14 @@ export const PodcastSlice = createSlice({
        state.podcastData=[{...action.payload
       }];
       },
-      addVideoData:(state,action:PayloadAction<videoData>)=>{
+      addVideoData:(state,action:PayloadAction<Array<videoData>>)=>{
        state.videoData.push(action.payload);
       },
       addVideoId:(state,action:PayloadAction<number>)=>{
       state.id=action.payload;
+      },
+      changeAutoPlay:(state,action:PayloadAction<number>)=>{
+        // state.videoData.find((item)=>item===action.payload);
       }
     },
   });

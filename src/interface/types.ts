@@ -9,5 +9,6 @@ export interface podData{
 export interface videoData{
     id:number,
     videoURL:string,
-    imgSRC:string
+    imgSRC:string,
+    autoplay:boolean,
 }

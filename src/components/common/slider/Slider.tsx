@@ -3,20 +3,25 @@ import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./style.css";
-import {FC,useState} from 'react';
+import {FC,useEffect,useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { videoData } from 'interface/types';
-import { addVideoId } from 'services/storeRedux/slice/Slice';
+import { addVideoData, addVideoId } from 'services/storeRedux/slice/Slice';
 import TransitionsModal from 'components/videoModal/ModalVideo';
 interface VideoProps {
   videodata:videoData[];
 }
 const Slider:FC<VideoProps>= ({videodata}) => {
   
+  
   const [open, setOpen] = useState(false);
   const handleOpen= () => setOpen(true);
   const handleClose = () => setOpen(false);
   const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(addVideoData(videodata))
+  },[dispatch]);
     return(
       <>
     <Swiper
@@ -29,11 +34,11 @@ const Slider:FC<VideoProps>= ({videodata}) => {
       >
         {videodata.map((item:any) => {
           return (
-            <SwiperSlide key={item.id} onClick={()=>{
+            <SwiperSlide key={item.id} className='main-slider'>
+              <img src={item.imgSRC}  alt="number" onClick={()=>{
               dispatch(addVideoId(item.id));
               handleOpen();
-            }} className='main-slider'>
-              <img src={item.imgSRC}  alt="number" />
+            }}/>
             </SwiperSlide>
           );
         })}

@@ -2,62 +2,75 @@ import { videoData } from "interface/types";
 
 const CONST_VIDEO_DATA:videoData[]=[{
     id:1,
-    videoURL:'/public/assets/amazon.mp4',
-    imgSRC:'/public/assets/amazon.webp',
+    videoURL:'/assets/amazon.mp4',
+    imgSRC:'/assets/amazon.webp',
+    autoplay:false,
 },
 {
     id:2,
-    videoURL:'/public/assets/boats.mp4',
-    imgSRC:'/public/assets/boats.jpeg'
+    videoURL:'/assets/boats.mp4',
+    imgSRC:'/assets/boats.jpeg',
+    autoplay:false
 },
 {
     id:3,
-    videoURL:'/public/assets/buildings.mp4',
-    imgSRC:'/public/assets/buildings.jpeg'
+    videoURL:'/assets/buildings.mp4',
+    imgSRC:'/assets/buildings.jpeg',
+    autoplay:false
 },
 {
     id:4,
-    videoURL:'/public/assets/canada.mp4',
-    imgSRC:'/public/assets/canada.jpeg'
+    videoURL:'/assets/canada.mp4',
+    imgSRC:'/assets/canada.jpeg',
+    autoplay:false
 },
 {
  id:5,
- videoURL:'/public/assets/clouds_above_home.mp4',
- imgSRC:'/public/assets/clouds_above_home.jpeg'
+ videoURL:'/assets/clouds_above_home.mp4',
+ imgSRC:'/assets/clouds_above_home.jpeg',
+ autoplay:false
+
 },
 {
 id:6,
-videoURL:'/public/assets/drone.mp4',
-imgSRC:'/public/assets/drone.webp'
+videoURL:'/assets/drone.mp4',
+imgSRC:'/assets/drone.webp',
+autoplay:false
 },
 {
 id:7,
-videoURL:'/public/assets/greenary.mp4',
-imgSRC:'/public/assets/greenary.jpeg'
+videoURL:'/assets/greenary.mp4',
+imgSRC:'/assets/greenary.jpeg',
+autoplay:false
 },
 {
 id:8,
-videoURL:'/public/assets/island.mp4',
-imgSRC:'/public/assets/island.jpeg'
+videoURL:'/assets/island.mp4',
+imgSRC:'/assets/island.jpeg',
+autoplay:false
 },
 {
     id:9,
-    videoURL:'/public/assets/oceans.mp4',
-    imgSRC:'/public/assets/oceans.jpeg'
+    videoURL:'/assets/oceans.mp4',
+    imgSRC:'/assets/oceans.jpeg',
+    autoplay:false
 },
 {
     id:10,
-    videoURL:'/public/assets/pigeons.mp4',
-    imgSRC:'/public/assets/pigeons.jpeg'
+    videoURL:'/assets/pigeons.mp4',
+    imgSRC:'/assets/pigeons.jpeg',
+    autoplay:false
 },
 {
     id:11,
-    videoURL:'/public/assets/sea_secenry.mp4',
-    imgSRC:'/public/assets/sea_secenry.jpeg'
+    videoURL:'/assets/sea_secenry.mp4',
+    imgSRC:'/assets/sea_secenry.jpeg',
+    autoplay:false
 },{
     id:12,
-    videoURL:'/public/assets/video_1.mp4',
-    imgSRC:'/public/assets/video_1.jpeg'
+    videoURL:'/assets/video_1.mp4',
+    imgSRC:'/assets/video_1.jpeg',
+    autoplay:false
 }
 ]
 export default CONST_VIDEO_DATA;
