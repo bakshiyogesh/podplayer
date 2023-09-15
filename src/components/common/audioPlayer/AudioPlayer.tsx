@@ -16,43 +16,42 @@ interface AudioProps {
 const AudioPlayer: FC<AudioProps> = ({ selectData }) => {
 
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [muted, setMuted] = useState(false);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
+  const[state,setState]=useState({isPlay:false,isMuted:false,duration:0,currentTime:0});
   const togglePlay = () => {
     if (audioRef.current!.paused) {
       audioRef.current!.play();
-      setIsPlaying(true);
+      setState({...state,isPlay:true});
     } else {
       audioRef.current!.pause();
-      setIsPlaying(false);
+     setState({...state,isPlay:false});
     }
   };
   const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current!.currentTime);
-    setDuration(audioRef.current!.duration);
+    setState({...state,currentTime:audioRef.current!.currentTime});
+    setState({...state,duration:audioRef.current!.duration});
   };
 const handleForwTenSeconds=()=>{  
-  const afterTenSec=currentTime+10;
+  const afterTenSec=state.currentTime+10;
+  console.log("currentTime:",afterTenSec);
   audioRef.current!.currentTime=afterTenSec;
-  setCurrentTime(afterTenSec);
+  setState({...state,currentTime:afterTenSec});
 }
 const handleBackTenSec=()=>{
-  const beforeTenSec=currentTime-10;
+  const beforeTenSec=state.currentTime-10;
+  console.log("beforeTenSec",beforeTenSec)
   audioRef.current!.currentTime=beforeTenSec;
-  setCurrentTime(beforeTenSec);
+  setState({...state,currentTime:beforeTenSec});
   
 }
   const handleSeek = (e:Event,newValue: number|number[]):void => {
-    const newTime = (+newValue / 100) * duration;
+    const newTime = (+newValue / 100) * state.duration;
     audioRef.current!.currentTime = newTime;
-    setCurrentTime(newTime);
+    setState({...state,currentTime:newTime});
   };
 
   const handlemutedChange = () => {
     audioRef.current!.muted = !audioRef.current?.muted;
-    setMuted(!muted);
+    setState({...state,isMuted:!state.isMuted})
   };
   
   return (
@@ -63,10 +62,10 @@ const handleBackTenSec=()=>{
         onTimeUpdate={handleTimeUpdate}
       />
       <IconButton onClick={togglePlay}>
-        {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
+        {state.isPlay ? <PauseIcon /> : <PlayArrowIcon />}
       </IconButton>
       <Slider
-        value={(currentTime / duration) * 100}
+        value={(state.currentTime / state.duration) * 100}
         onChange={handleSeek}
         min={0}
         max={100}
@@ -75,10 +74,10 @@ const handleBackTenSec=()=>{
         sx={{ m: 2 }}
       />
       <IconButton onClick={handlemutedChange}>
-        {muted ?<VolumeOffIcon />:<VolumeUpIcon/>}
+        {state.isMuted ?<VolumeOffIcon />:<VolumeUpIcon/>}
       </IconButton>
-      <Button onClick={handleForwTenSeconds} disabled={currentTime>=duration}><Forward10Icon sx={{ m: 2 }} /></Button>
-      <Button onClick={handleBackTenSec} disabled={!currentTime}><Replay10Icon sx={{m:1}}/></Button>
+      <Button onClick={handleForwTenSeconds} disabled={state.currentTime>=state.duration}><Forward10Icon sx={{ m: 2 }} /></Button>
+      <Button onClick={handleBackTenSec} disabled={!state.currentTime}><Replay10Icon sx={{m:1}}/></Button>
     </Grid>
   );
 };
