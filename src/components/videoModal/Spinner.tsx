@@ -1,11 +1,13 @@
 import CircularProgress from '@mui/material/CircularProgress';
-import { Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 export default function Spinner() {
 
   return (
-    <Grid sx={{width:'100vw',height:'100vh'}}>
-        <CircularProgress color="primary" />
+    <Grid container sx={{width:'100vw',height:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}>
+        <Box>
+        <CircularProgress color="primary" size={100}/>
+        </Box>
     </Grid>
   );
 }

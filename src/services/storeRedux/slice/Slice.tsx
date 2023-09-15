@@ -30,6 +30,7 @@ export const PodcastSlice = createSlice({
       },
       changeAutoPlay:(state,action:PayloadAction<number>)=>{
         // state.videoData.find((item)=>item===action.payload);
+        // const videoData = state.videoData.find((item) => item.id === action.payload.id);
       }
     },
   });
