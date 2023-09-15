@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import {addPodData} from 'services/storeRedux/slice/Slice';
 import { FC } from 'react';
 import { Grid } from '@mui/material';
-import PodHeader from 'components/layout/podHeader/PodCastHeader';
 import { Link } from 'react-router-dom';
 
  const PodCard:FC=()=>{
@@ -16,7 +15,6 @@ import { Link } from 'react-router-dom';
     return(
     <>
         <Grid container sx={{display:'flex'}} maxWidth={'100%'}>
-          <PodHeader/>
           <Grid item sx={{background:'#1F1E1E',borderRadius:'4px',display:'flex',maxWidth:'60vw',justifyContent:'flex-start',flexWrap:'wrap'}} >
     {CONST_POD_DATA.map((item)=>{
         return(

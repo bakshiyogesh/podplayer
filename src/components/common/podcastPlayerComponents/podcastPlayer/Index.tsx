@@ -20,13 +20,11 @@ const PodcastPlayer:FC<dataPod> = ({dataPodcast}) => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           WebkitBackgroundSize:'cover',
-          mt:2
         }}/>
         <Grid  container sx={{display:'flex',width:'100vw',background:'#2D2D2D'}}>
      <Grid item sx={{borderRadius:'4px',display:'flex',maxWidth:'40vw',justifyContent:'flex-start',flexWrap:'wrap'}} >
     {dataPodcast.map((item:any)=>{
         return(
-            <>
                 <Card sx={{ Width:200,background:'#1F1E1E',m:3}} key={item.id}>
                 <CardMedia
         component="img"
@@ -43,7 +41,6 @@ const PodcastPlayer:FC<dataPod> = ({dataPodcast}) => {
         </Typography>
       </CardContent>
                 </Card>
-            </>
         )
       })}
       </Grid>

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import PodcastReducer from 'services/storeRedux/slice/Slice'
+import MediaMomentumReducer from 'services/storeRedux/slice/Slice'
 export const store = configureStore({
     reducer: {
-      podcast:PodcastReducer
+      mediamomentum:MediaMomentumReducer
     },
   })
   

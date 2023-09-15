@@ -5,7 +5,7 @@ import PlayListPlayer from 'components/common/playlistPlayer/PlaylistPlayer';
 
 const Home = () => {
   return (
-    <Grid sx={{display:'flex'}}>
+    <Grid sx={{display:'flex',width:'100vw'}}>
     <PodCard/>
     <PlayListPlayer/>
     </Grid>

@@ -1,0 +1,20 @@
+.swiper {
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .mySwipe{
+    background-position: center;
+    background-size: cover;
+    width:100vw;
+    height:550px;
+    background-color: black;
+  }
+  
+  .swiper-button-prev{
+    margin-left:500px;
+  }
+  .swiper-button-next{
+    margin-right: 500px;
+  }
