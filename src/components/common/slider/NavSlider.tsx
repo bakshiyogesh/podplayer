@@ -21,8 +21,6 @@ const Slider:FC<VideoProps>= ({videodata}) => {
 
   useEffect(()=>{
     dispatch(addVideoData(videodata))
-    console.log("effect checking running or not");
-    console.log("videoData in effect:",videodata);
   },[dispatch]);
     return(
       <>

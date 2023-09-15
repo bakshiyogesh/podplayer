@@ -11,14 +11,8 @@ import Spinner from "components/videoModal/Spinner";
 // import CONST_VIDEO_DATA from "constant/VideoData";
 export default function Model() {
   const selectedID=useSelector((state:RootState)=>state.podcast.id);
-  console.log("selectedID:",selectedID);
-  
   const videoDataSelected=useSelector((state:RootState)=>state.podcast.videoData);
-  console.log("videoSelectedD from modal:",videoDataSelected);
-  
   const videoData=videoDataSelected[0].slice(selectedID-1);
-  console.log("after slicing data of videos:",videoData);
-  
   const [activeIndex, setActiveIndex] = useState(0);
   const[snapIndex,setSnapIndex]=useState(0);
 
