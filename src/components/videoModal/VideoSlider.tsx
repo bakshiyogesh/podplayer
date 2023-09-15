@@ -14,12 +14,12 @@ export default function Model() {
   const videoDataSelected=useSelector((state:RootState)=>state.mediamomentum.videoData);
   const videoData=videoDataSelected[0].slice(selectedID-1);
   const [activeIndex, setActiveIndex] = useState(0);
-  const[snapIndex,setSnapIndex]=useState(0);
+  // const[snapIndex,setSnapIndex]=useState(0);
 
 
   const handleSlideChange = useCallback((swiper:any) => {
     setActiveIndex(swiper.realIndex);
-    setSnapIndex(swiper.snapIndex);
+    // setSnapIndex(swiper.snapIndex);
   },[]);
   return (
     <>

@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Model from './VideoSlider';
 import { Grid } from '@mui/material';
+import { FC } from 'react';
 const style = {
   width: '100vw',
   height:'100vh',
@@ -12,7 +13,7 @@ const style = {
   p:1,
 };
 
-export default function TransitionsModal({open,handleClose}) {
+const TransitionsModal:FC<>=({open,handleClose})=> {
 
   return (
     <Grid container>
@@ -37,3 +38,4 @@ export default function TransitionsModal({open,handleClose}) {
     </Grid>
   );
 }
+export default TransitionsModal;
