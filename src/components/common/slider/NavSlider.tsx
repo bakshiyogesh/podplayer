@@ -14,10 +14,9 @@ interface VideoProps {
 
 const Slider:FC<VideoProps>= ({videodata}) => {
   
-  type HandlerFunction = () => void;
-  const [open, setOpen] = useState<boolean>(false);
-  const handleOpen:HandlerFunction= () => setOpen(true);
-  const handleClose:HandlerFunction = () => setOpen(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen= () => setOpen(true);
+  const handleClose= () => setOpen(false);
   const dispatch=useDispatch();
 
   useEffect(()=>{

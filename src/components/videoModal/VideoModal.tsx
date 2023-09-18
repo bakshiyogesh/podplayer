@@ -1,7 +1,8 @@
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import Model from './VideoSlider';
 import { Grid } from '@mui/material';
 import { FC } from 'react';
@@ -12,8 +13,11 @@ const style = {
   boxShadow: 24,
   p:1,
 };
-
-const TransitionsModal:FC<>=({open,handleClose})=> {
+ type TransitionalProps={
+  open:boolean,
+  handleClose:()=>void;
+ }
+const TransitionsModal:FC<TransitionalProps>=({open,handleClose})=> {
 
   return (
     <Grid container>
@@ -31,7 +35,7 @@ const TransitionsModal:FC<>=({open,handleClose})=> {
         }}
       >
           <Box sx={style}>
-          <Button onClick={handleClose} sx={{ml:'85vw'}} variant='contained'>Close</Button>
+          <IconButton onClick={handleClose} sx={{ml:'85vw'}} color='primary'><CloseIcon/></IconButton>
             <Model/>
           </Box>
       </Modal>
