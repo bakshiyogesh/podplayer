@@ -7,7 +7,7 @@ interface dataPod{
     dataPodcast:podData[]
 }
 const PodcastPlayer:FC<dataPod> = ({dataPodcast}) => {
-    const backGround='../../../public/background.jpg'
+    const backGround='/background.jpg'
   return (
    <>
      
