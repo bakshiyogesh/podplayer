@@ -94,7 +94,7 @@ const CONST_POD_DATA :podData[]= [
     audioURL:
       "https://s356.podbean.com/pb/0f20c75b418a33599f548874299ef708/64f7c078/data1/fs103/12984853/uploads/TCI_Ep84_Henry_Ford_s_Insightful_Quote69aoq.mp3",
     title: "The Clever Investor Podcast",
-    imgSRC:'/public/clever_investor.jpeg',
+    imgSRC:'/clever_investor.jpeg',
     description:
       "This is an all inclusive podcast for Australian investors. Join Blue Wealth’s Senior Education Specialist, Owun Taylor in conversation with industry experts, leaders, and thinkers about what it takes to be a clever and more successful investor. A weekly podcast serving up the easiest-to-understand finance program. Delivered in bite-sized chunks, meaning no episode is ever more than 20 minutes.",
   audioLength:"8:24"
