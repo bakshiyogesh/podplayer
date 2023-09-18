@@ -28,10 +28,10 @@ export const MediaMomentumSlice = createSlice({
       addVideoId:(state,action:PayloadAction<number>)=>{
       state.id=action.payload;
       },
-      changeAutoPlay:(state,action:PayloadAction<number>)=>{
-        // state.videoData.find((item)=>item===action.payload);
-        // const videoData = state.videoData.find((item) => item.id === action.payload.id);
-      }
+      // changeAutoPlay:(state,action:PayloadAction<number>)=>{
+      //   // state.videoData.find((item)=>item===action.payload);
+      //   // const videoData = state.videoData.find((item) => item.id === action.payload.id);
+      // }
     },
   });
   export const{addPodData,addVideoData,addVideoId}=MediaMomentumSlice.actions;

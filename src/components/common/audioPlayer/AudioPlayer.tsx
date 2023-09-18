@@ -42,6 +42,7 @@ const handleBackTenSec=useCallback(()=>{
   
 },[state]);
   const handleSeek =useCallback((e:Event,newValue: number|number[]) => {
+    console.log(e);
     const newTime = (+newValue / 100) * state.duration;
     audioRef.current!.currentTime = newTime;
     setState({...state,currentTime:newTime});

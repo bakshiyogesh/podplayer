@@ -11,12 +11,12 @@ import TransitionsModal from 'components/videoModal/VideoModal';
 interface VideoProps {
   videodata:videoData[];
 }
+
 const Slider:FC<VideoProps>= ({videodata}) => {
-  
   
   const [open, setOpen] = useState(false);
   const handleOpen= () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose= () => setOpen(false);
   const dispatch=useDispatch();
 
   useEffect(()=>{
